@@ -1,7 +1,7 @@
 #include <HCSR04.h>
 
-const byte TRIGGER_PIN = 12;
-const byte ECHO_PIN = 13;
+const byte TRIGGER_PIN = 13;
+const byte ECHO_PIN = 12;
 
 UltraSonicDistanceSensor distance_sensor(TRIGGER_PIN, ECHO_PIN);
 
