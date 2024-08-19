@@ -5,6 +5,7 @@
 
 const byte TRIGGER_PIN = 13;
 const byte ECHO_PIN = 12;
+const int BUZZER_PIN = 11;
 
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
@@ -41,5 +42,27 @@ void loop() {
   display.println("cm");
   display.display();
 
-  delay(100);
+  if (distance <= 10) {
+    tone(BUZZER_PIN, 261, 250);
+  }
+
+  if (distance > 10 && distance <= 15) {
+    tone(BUZZER_PIN, 261, 250);
+    delay(100);
+    noTone(BUZZER_PIN);
+  }
+
+  if (distance > 15 && distance <= 20) {
+    tone(BUZZER_PIN, 261, 250);
+    delay(150);
+    noTone(BUZZER_PIN);
+  }
+
+  if (distance > 20 && distance <= 25) {
+    tone(BUZZER_PIN, 261, 250);
+    delay(200);
+    noTone(BUZZER_PIN);
+  }
+
+  delay(50);
 }
